@@ -5,6 +5,7 @@
   bottom: 0;
   display: flex;
   justify-content: center;
+  background: white;
 }
 
 .footer-inner {
