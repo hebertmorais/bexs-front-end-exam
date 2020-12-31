@@ -1,0 +1,17 @@
+.footer {
+  height: 68px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-inner {
+  height: 12px;
+  width: 100%;
+  max-width: 56%;
+  border-radius: 5px;
+  background: #c9c9c9;
+  align-self: center;
+}
