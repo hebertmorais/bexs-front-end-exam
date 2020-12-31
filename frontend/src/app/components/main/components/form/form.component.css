@@ -1,5 +1,117 @@
+.row {
+  display: block;
+}
+.column-full {
+  width: 100%;
+}
+.column-half {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+}
 .form {
   width: 1024px;
   height: 596px;
   background: white;
+  display: flex;
+}
+.area-header {
+  margin-bottom: 50px;
+}
+.credit-card-area {
+  width: 352px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  background: #de4b4b;
+}
+.credit-card-area .area-header {
+  color: white;
+}
+.new-credit-card {
+  display: flex;
+}
+.new-credit-card-icon {
+  height: 50px;
+  width: 50px;
+}
+.new-credit-card-text {
+  margin-left: 15px;
+  font: normal normal bold 20px/24px Verdana;
+  color: #fff;
+}
+.credit-card-display {
+  margin-top: 30px;
+  overflow: show;
+}
+.credit-card-container {
+  height: 224px;
+  width: 364px;
+  padding-top: 36px;
+  background: url("../../../../../assets/images/credit-card-valid-background-shadow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.credit-card-data {
+  width: 299px;
+  margin: auto;
+}
+.credit-card-container .credit-card-info {
+  color: #fff;
+  text-shadow: 0px 1px 2px #000000b3;
+}
+#credit-card-flag {
+  height: 23px;
+  width: 69px;
+}
+#credit-card-number {
+  display: block;
+  margin-top: 49px;
+  letter-spacing: 2.31px;
+  font: normal normal normal 29px SF Pro Text;
+}
+#credit-card-bottom-row {
+  margin-top: 34px;
+}
+#credit-card-date {
+  float: right;
+}
+.inputs-area {
+  width: 672px;
+  padding-top: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.inputs {
+  width: 440px;
+}
+.inputs input,
+.inputs select {
+  width: 100%;
+  font: normal normal normal 17px/22px Verdana;
+}
+
+#form-credit-card-name,
+#form-credit-card-installments,
+#form-credit-card-date,
+#next-button {
+  margin-top: 32px;
+}
+#form-credit-card-date {
+  padding-right: 16px;
+}
+#next-button {
+  height: 51px;
+  width: 246px;
+  float: right;
+  background: #de4b4b;
+  border-radius: 10px;
+  font: normal normal 600 17px/22px SF Pro Text;
+  letter-spacing: -0.01px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
