@@ -44,36 +44,43 @@
     </div>
     <form class="inputs">
       <div class="row">
-        <div id="form-credit-card-number" class="column-full">
-          <label>Número do cartão</label>
-          <input type="text" />
-        </div>
+        <mat-form-field id="form-credit-card-number" class="column-full">
+          <mat-label>Número do cartão</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
       </div>
       <div class="row">
-        <div id="form-credit-card-name" class="column-full">
-          <label>Nome (igual ao cartão)</label>
-          <input type="text" />
-        </div>
+        <mat-form-field id="form-credit-card-name" class="column-full">
+          <mat-label>Nome (igual ao cartão)</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
       </div>
       <div class="row">
-        <div id="form-credit-card-date" class="column-half">
-          <label>Validade</label>
-          <input type="text" />
-        </div>
-        <div id="form-credit-card-cvv" class="column-half">
-          <label>CVV</label>
-          <input type="text" />
-        </div>
+        <mat-form-field id="form-credit-card-date" class="column-half">
+          <mat-label>Validade</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+        <mat-form-field id="form-credit-card-cvv" class="column-half">
+          <mat-label>CVV</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
       </div>
       <div class="row">
-        <div id="form-credit-card-installments" class="column-full">
-          <select name="installments" id="installments">
-            <option value="12">12x R$1.000,00 sem juros</option>
-            <option value="1">1x R$12.000,00 sem juros</option>
-          </select>
-        </div>
+        <mat-form-field
+          id="form-credit-card-installments"
+          class="column-full"
+        >
+          <mat-label>Número de parcelas</mat-label>
+          <mat-select
+            name="installments"
+            id="installments"
+          >
+            <mat-option value="1">12x R$1.000,00 sem juros</mat-option>
+            <mat-option value="12">1x R$12.000,00 sem juros</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
-      <button id="next-button" type="submit" href="#">Continuar</button>
+      <button matButton id="next-button" type="submit" href="#">Continuar</button>
     </form>
   </div>
 </div>

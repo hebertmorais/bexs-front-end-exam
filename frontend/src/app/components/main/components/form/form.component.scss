@@ -38,7 +38,7 @@
 }
 .new-credit-card-text {
   margin-left: 15px;
-  font: normal normal bold 20px/24px Verdana;
+  font: normal normal 600 20px/24px Verdana;
   color: #fff;
 }
 .credit-card-display {
@@ -89,17 +89,25 @@
 .inputs {
   width: 440px;
 }
-.inputs input,
-.inputs select {
-  width: 100%;
-  font: normal normal normal 17px/22px Verdana;
+.inputs input, .inputs .mat-select-value-text {
+  color: #3c3c3c;
+  font-family: Verdana;
+  font-size: 17px;
+}
+.inputs mat-label {
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  color: #c9c9c9;
+  font-family: Verdana;
 }
 
 #form-credit-card-name,
 #form-credit-card-installments,
 #form-credit-card-date,
 #next-button {
-  margin-top: 32px;
+  margin-top: 24px;
 }
 #form-credit-card-date {
   padding-right: 16px;
@@ -110,7 +118,7 @@
   float: right;
   background: #de4b4b;
   border-radius: 10px;
-  font: normal normal 600 17px/22px SF Pro Text;
+  font: normal normal 400 17px/22px Roboto;
   letter-spacing: -0.01px;
   text-transform: uppercase;
   color: #ffffff;

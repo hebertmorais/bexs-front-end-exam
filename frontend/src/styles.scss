@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-underline {
+  background-color: #c9c9c9 !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.mat-form-field._mat-animation-noopable .mat-form-field-label,
+.mat-form-field._mat-animation-noopable .mat-form-field-ripple {
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    width 400ms cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.mat-select-value-text {
+  color: #3c3c3c !important;
+  font-family: Verdana !important;
+  font-size: 17px !important;
+}
