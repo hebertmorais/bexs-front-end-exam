@@ -38,9 +38,30 @@
   </div>
   <div class="inputs-area">
     <div class="area-header">
-      <span>1. Carrinho > </span>
-      <span>2. Pagamento > </span>
-      <span>3. Confirmação</span>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number done"></span>
+          <span class="step-title">Carrinho</span>
+          <mat-icon
+            [inline]="true"
+            style="font-size: 30px; color: #de4b4b; margin-left: 16px"
+            >keyboard_arrow_right
+          </mat-icon>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <span class="step-title">Pagamento</span>
+          <mat-icon
+            [inline]="true"
+            style="font-size: 30px; color: #de4b4b; margin-left: 16px"
+            >keyboard_arrow_right
+          </mat-icon>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <span class="step-title">Confirmação</span>
+        </div>
+      </div>
     </div>
     <form class="inputs">
       <div class="row">
@@ -66,21 +87,17 @@
         </mat-form-field>
       </div>
       <div class="row">
-        <mat-form-field
-          id="form-credit-card-installments"
-          class="column-full"
-        >
+        <mat-form-field id="form-credit-card-installments" class="column-full">
           <mat-label>Número de parcelas</mat-label>
-          <mat-select
-            name="installments"
-            id="installments"
-          >
+          <mat-select name="installments" id="installments">
             <mat-option value="1">12x R$1.000,00 sem juros</mat-option>
             <mat-option value="12">1x R$12.000,00 sem juros</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <button matButton id="next-button" type="submit" href="#">Continuar</button>
+      <button matButton id="next-button" type="submit" href="#">
+        Continuar
+      </button>
     </form>
   </div>
 </div>

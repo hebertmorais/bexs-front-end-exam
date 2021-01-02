@@ -77,6 +77,43 @@
 #credit-card-date {
   float: right;
 }
+.steps {
+  display: flex;
+  gap: 12px;
+}
+.steps span {
+  font-family: Verdana;
+  font-size: 13px;
+  color: #de4b4b;
+}
+.step {
+  display: flex;
+  align-items: center;
+}
+.step-number {
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  border: 1px solid #de4b4b;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.done {
+  background: #de4b4b;
+  color: transparent;
+}
+.done::after {
+  content: "";
+  background-image: url(../../../../../assets/images/done.png);
+  height: 10px;
+  width: 13px;
+  background-size: cover;
+  align-self: center;
+  overflow: visible;
+}
 .inputs-area {
   width: 672px;
   padding-top: 50px;
@@ -89,7 +126,8 @@
 .inputs {
   width: 440px;
 }
-.inputs input, .inputs .mat-select-value-text {
+.inputs input,
+.inputs .mat-select-value-text {
   color: #3c3c3c;
   font-family: Verdana;
   font-size: 17px;
