@@ -1,7 +1,17 @@
 <div class="form">
   <div class="credit-card-area">
     <div class="area-header">
-      <span>< Alterar forma de Pagamento</span>
+      <mat-icon
+        [inline]="true"
+        style="
+          font-size: 28px;
+          color: white;
+          margin-right: 3.5px;
+          margin-left: -5px;
+        "
+        >keyboard_arrow_left
+      </mat-icon>
+      <span id="page-back">Alterar forma de pagamento</span>
     </div>
     <div>
       <div class="new-credit-card">
@@ -42,18 +52,14 @@
         <div class="step">
           <span class="step-number done"></span>
           <span class="step-title">Carrinho</span>
-          <mat-icon
-            [inline]="true"
-            style="font-size: 30px; color: #de4b4b; margin-left: 16px"
+          <mat-icon [inline]="true" class="step-next-icon"
             >keyboard_arrow_right
           </mat-icon>
         </div>
         <div class="step">
           <span class="step-number">2</span>
           <span class="step-title">Pagamento</span>
-          <mat-icon
-            [inline]="true"
-            style="font-size: 30px; color: #de4b4b; margin-left: 16px"
+          <mat-icon class="step-next-icon" [inline]="true"
             >keyboard_arrow_right
           </mat-icon>
         </div>
@@ -67,27 +73,30 @@
       <div class="row">
         <mat-form-field id="form-credit-card-number" class="column-full">
           <mat-label>Número do cartão</mat-label>
-          <input matInput type="text" />
+          <input matInput type="text" value="5149 4505 6231 6542" />
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field id="form-credit-card-name" class="column-full">
           <mat-label>Nome (igual ao cartão)</mat-label>
-          <input matInput type="text" />
+          <input matInput type="text" value="Felipe B A Pio Nt" />
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field id="form-credit-card-date" class="column-half">
           <mat-label>Validade</mat-label>
-          <input matInput type="text" />
+          <input matInput type="text" value="06/26" />
         </mat-form-field>
         <mat-form-field id="form-credit-card-cvv" class="column-half">
-          <mat-label>CVV</mat-label>
-          <input matInput type="text" />
+          <mat-label>CVV <mat-icon
+            [inline]="true"
+            >info
+          </mat-icon></mat-label>
+          <input matInput type="text" value="542" />
         </mat-form-field>
       </div>
       <div class="row">
-        <mat-form-field id="form-credit-card-installments" class="column-full">
+        <mat-form-field [floatLabel]="'never'" id="form-credit-card-installments" class="column-full">
           <mat-label>Número de parcelas</mat-label>
           <mat-select name="installments" id="installments">
             <mat-option value="1">12x R$1.000,00 sem juros</mat-option>

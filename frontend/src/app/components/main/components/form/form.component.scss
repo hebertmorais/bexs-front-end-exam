@@ -16,12 +16,17 @@
   display: flex;
 }
 .area-header {
-  margin-bottom: 50px;
+  margin-bottom: 46.5px;
+  display: flex;
+  align-items: center;
+}
+.area-header #page-back {
+  font: normal normal normal 13px Verdana;
 }
 .credit-card-area {
   width: 352px;
-  padding-top: 50px;
-  padding-left: 50px;
+  padding-top: 46.5px;
+  padding-left: 64px;
   padding-right: 16px;
   box-sizing: border-box;
   background: #de4b4b;
@@ -38,6 +43,7 @@
 }
 .new-credit-card-text {
   margin-left: 15px;
+  margin-top: 1px;
   font: normal normal 600 20px/24px Verdana;
   color: #fff;
 }
@@ -47,32 +53,35 @@
 }
 .credit-card-container {
   height: 224px;
-  width: 364px;
-  padding-top: 36px;
+  width: 365px;
+  padding-top: 35.5px;
   background: url("../../../../../assets/images/credit-card-valid-background-shadow.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 .credit-card-data {
-  width: 299px;
+  width: 302px;
   margin: auto;
 }
 .credit-card-container .credit-card-info {
   color: #fff;
   text-shadow: 0px 1px 2px #000000b3;
+  font: normal normal normal 16px/27px SF Pro Text;
 }
 #credit-card-flag {
   height: 23px;
   width: 69px;
+  margin-left: -5.4px;
 }
 #credit-card-number {
   display: block;
-  margin-top: 49px;
-  letter-spacing: 2.31px;
-  font: normal normal normal 29px SF Pro Text;
+  margin-top: 44.72px;
+  letter-spacing: 2.35px;
+  word-spacing: 8.3px;
+  font: normal normal normal 22px SF Pro Text;
 }
 #credit-card-bottom-row {
-  margin-top: 34px;
+  margin-top: 29px;
 }
 #credit-card-date {
   float: right;
@@ -90,9 +99,14 @@
   display: flex;
   align-items: center;
 }
+.step-next-icon {
+  font-size: 30px !important;
+  color: #de4b4b;
+  margin-left: 14px;
+}
 .step-number {
-  height: 22px;
-  width: 22px;
+  height: 19px;
+  width: 19px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,8 +130,8 @@
 }
 .inputs-area {
   width: 672px;
-  padding-top: 50px;
-  padding-right: 50px;
+  padding-top: 46.5px;
+  padding-right: 64px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -141,11 +155,14 @@
   font-family: Verdana;
 }
 
+#form-credit-card-number input {
+  word-spacing: 6px;
+}
+
 #form-credit-card-name,
 #form-credit-card-installments,
-#form-credit-card-date,
-#next-button {
-  margin-top: 24px;
+#form-credit-card-date{
+  margin-top: 22px;
 }
 #form-credit-card-date {
   padding-right: 16px;
@@ -153,10 +170,11 @@
 #next-button {
   height: 51px;
   width: 246px;
+  margin-top: 40px;
   float: right;
   background: #de4b4b;
   border-radius: 10px;
-  font: normal normal 400 17px/22px Roboto;
+  font: normal normal 600 17px/22px SF Pro Text;
   letter-spacing: -0.01px;
   text-transform: uppercase;
   color: #ffffff;

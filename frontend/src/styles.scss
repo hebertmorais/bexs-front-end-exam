@@ -6,7 +6,15 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url(./assets/fonts/sf-pro.ttf);
 }
 
 .mat-form-field-underline {
@@ -14,8 +22,8 @@ body {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 6.8px;
 }
 
 .mat-form-field._mat-animation-noopable .mat-form-field-label,
