@@ -161,7 +161,7 @@
 
 #form-credit-card-name,
 #form-credit-card-installments,
-#form-credit-card-date{
+#form-credit-card-date {
   margin-top: 22px;
 }
 #form-credit-card-date {
@@ -178,4 +178,12 @@
   letter-spacing: -0.01px;
   text-transform: uppercase;
   color: #ffffff;
+}
+#select-arrow-icon {
+  color: #de4b4b;
+  margin-left: -26px;
+  position: absolute;
+  bottom: -6px;
+  right: 0px;
+  font-size: 30px;
 }
