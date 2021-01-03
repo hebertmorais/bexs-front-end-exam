@@ -52,30 +52,32 @@
   overflow: show;
 }
 .credit-card-container {
-  height: 224px;
-  width: 365px;
+  height: 189px;
+  width: 364px;
   padding-top: 35.5px;
-  transition: 0.4s;
+  transition: 0.25s;
+  border-radius: 16px;
+  box-shadow: 0px 8px 8px -2px #484747;
 }
 .credit-card-container-front {
-  background: url("../../../../../assets/images/credit-card-valid-background-shadow.png");
+  background: url("../../../../../assets/images/credit-card-valid-background.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 .credit-card-container-back {
-  background: url("../../../../../assets/images/credit-card-valid-back-background-shadow.png");
+  background: url("../../../../../assets/images/credit-card-valid-back-background.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .credit-card-container-blank-front {
-  background: url("../../../../../assets/images/credit-card-blank-background-shadow.png");
+  background: url("../../../../../assets/images/credit-card-blank-background.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .credit-card-container-blank-back {
-  background: url("../../../../../assets/images/credit-card-blank-back-background-shadow.png");
+  background: url("../../../../../assets/images/credit-card-blank-back-background.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -100,6 +102,15 @@
   word-spacing: 8.3px;
   font-family: SF Pro Text;
   text-align: center;
+}
+#credit-card-cvv-row {
+  margin-top: 72px;
+  margin-left: 150px;
+}
+#credit-card-cvv {
+  font: normal normal normal 19px/28px SF Pro Text;
+  letter-spacing: -0.57px;
+  color: #3c3c3c;
 }
 
 #credit-card-bottom-row {

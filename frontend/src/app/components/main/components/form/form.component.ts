@@ -15,6 +15,7 @@ import Util from '../../../../common/utils';
 })
 export class FormComponent implements OnInit {
   creditCardForm: any;
+  cvvIsFocused = false;
 
   constructor() {}
 
@@ -60,5 +61,10 @@ export class FormComponent implements OnInit {
       this.cardDate.value ||
       this.cardCvv.value
     );
+  }
+
+  toggleCvvFocus(focus: string) {
+    this.cvvIsFocused = focus == 'on';
+    console.log('focus', this.cvvIsFocused)
   }
 }

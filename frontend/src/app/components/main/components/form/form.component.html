@@ -27,33 +27,48 @@
         <div
           [ngClass]="{
             'credit-card-container-front': hasCreditCardInfo,
-            'credit-card-container-blank-front': !hasCreditCardInfo
+            'credit-card-container-blank-front': !hasCreditCardInfo,
+            'credit-card-container-back': cvvIsFocused && cardCvv.value,
+            'credit-card-container-blank-back': cvvIsFocused && !cardCvv.value
           }"
           class="credit-card-container"
         >
           <div class="credit-card-data">
-            <img
-              style="transition: 0.2s;"
-              [ngStyle]="{'opacity': hasCreditCardInfo? '1' : '0'}"
-              id="credit-card-flag"
-              src="../../../../../assets/images/visa-logo.png"
-            />
-            <div class="row">
-              <span class="credit-card-info"
-              [ngStyle]="{'font-size': hasCreditCardInfo? '21px' : '26px'}"
-               id="credit-card-number">{{
-                (cardNumber.value | mask: "0000 0000 0000 0000") ||
-                  "**** **** **** ****"
-              }}</span>
-              <span id="dummy-credit-card-number-gap"> </span>
+            <div [hidden]="cvvIsFocused" class="front-data">
+              <img
+                style="transition: 0.2s"
+                [ngStyle]="{ opacity: hasCreditCardInfo ? '1' : '0' }"
+                id="credit-card-flag"
+                src="../../../../../assets/images/visa-logo.png"
+              />
+              <div class="row">
+                <span
+                  class="credit-card-info"
+                  [ngStyle]="{
+                    'font-size': hasCreditCardInfo ? '21px' : '26px'
+                  }"
+                  id="credit-card-number"
+                  >{{
+                    (cardNumber.value | mask: "0000 0000 0000 0000") ||
+                      "**** **** **** ****"
+                  }}</span
+                >
+              </div>
+              <div id="credit-card-bottom-row" class="row">
+                <span class="credit-card-info" id="credit-card-name">{{
+                  cardName.value || "NOME DO TITULAR"
+                }}</span>
+                <span class="credit-card-info" id="credit-card-date">{{
+                  (cardDate.value | mask: "00/00") || "00/00"
+                }}</span>
+              </div>
             </div>
-            <div id="credit-card-bottom-row" class="row">
-              <span class="credit-card-info" id="credit-card-name">{{
-                cardName.value || "NOME DO TITULAR"
-              }}</span>
-              <span class="credit-card-info" id="credit-card-date">{{
-                (cardDate.value | mask: "00/00") || "00/00"
-              }}</span>
+            <div [hidden]="!cvvIsFocused" class="back-data">
+              <div class="row" id="credit-card-cvv-row">
+                <span class="credit-card-info" id="credit-card-cvv">{{
+                  cardCvv.value || '***'
+                }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -136,6 +151,8 @@
             matInput
             type="text"
             autocomplete="cc-csc"
+            (focus)="toggleCvvFocus('on')"
+            (focusout)="toggleCvvFocus('off')"
           />
           <mat-error
             *ngIf="cardCvv.errors?.minlength || cardCvv.errors?.required"
