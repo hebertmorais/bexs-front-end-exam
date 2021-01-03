@@ -69,27 +69,64 @@
         </div>
       </div>
     </div>
-    <form class="inputs">
+    <form class="inputs" *ngIf="creditCardForm" [formGroup]="creditCardForm">
       <div class="row">
         <mat-form-field id="form-credit-card-number" class="column-full">
           <mat-label>Número do cartão</mat-label>
-          <input matInput type="text" value="5149 4505 6231 6542" />
+          <input
+            [formControl]="cardNumber"
+            matInput
+            type="text"
+            mask="0000 0000 0000 0000"
+            autocomplete="cc-number"
+          />
+          <mat-error *ngIf="cardNumber?.invalid"
+            >Número de cartão inválido</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field id="form-credit-card-name" class="column-full">
           <mat-label>Nome (igual ao cartão)</mat-label>
-          <input matInput type="text" value="Felipe B A Pio Nt" />
+          <input
+            matInput
+            type="text"
+            [formControl]="cardName"
+            autocomplete="cc-name"
+          />
+          <mat-error *ngIf="cardName.errors?.pattern">Nome inválido</mat-error>
+          <mat-error *ngIf="cardName.errors?.required"
+            >Insira seu nome completo</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field id="form-credit-card-date" class="column-half">
           <mat-label>Validade</mat-label>
-          <input matInput type="text" value="06/26" />
+          <input
+            [formControl]="cardDate"
+            mask="00/00"
+            matInput
+            type="text"
+            autocomplete="cc-exp"
+          />
+          <mat-error *ngIf="cardDate?.invalid || cardDate.errors?.required"
+            >Data inválida</mat-error
+          >
         </mat-form-field>
         <mat-form-field id="form-credit-card-cvv" class="column-half">
-          <mat-label>CVV <mat-icon [inline]="true">info </mat-icon></mat-label>
-          <input matInput type="text" value="542" />
+          <mat-label>CVV<mat-icon [inline]="true">info </mat-icon></mat-label>
+          <input
+            [formControl]="cardCvv"
+            mask="000"
+            matInput
+            type="text"
+            autocomplete="cc-csc"
+          />
+          <mat-error
+            *ngIf="cardCvv.errors?.minlength || cardCvv.errors?.required"
+            >Número de cartão inválido</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="row">
@@ -99,11 +136,20 @@
           class="column-full"
         >
           <mat-label>Número de parcelas</mat-label>
-          <mat-select name="installments" id="installments">
+          <mat-select
+            [formControl]="cardInstallments"
+            name="installments"
+            id="installments"
+          >
             <mat-option value="1">12x R$1.000,00 sem juros</mat-option>
             <mat-option value="12">1x R$12.000,00 sem juros</mat-option>
           </mat-select>
-          <mat-icon id="select-arrow-icon" matSuffix>keyboard_arrow_down </mat-icon>
+          <mat-icon id="select-arrow-icon" matSuffix
+            >keyboard_arrow_down
+          </mat-icon>
+          <mat-error *ngIf="cardInstallments.errors?.required"
+            >Insira o número de parcelas</mat-error
+          >
         </mat-form-field>
       </div>
       <button matButton id="next-button" type="submit" href="#">

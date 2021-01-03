@@ -41,3 +41,11 @@ body {
 .mat-select-arrow {
   opacity: 0;
 }
+
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-top: 6px !important;
+}
+
+.mat-error {
+  font: normal normal normal 13px/22px Verdana;
+}
