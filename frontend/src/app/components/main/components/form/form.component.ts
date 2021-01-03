@@ -52,4 +52,13 @@ export class FormComponent implements OnInit {
   get cardInstallments() {
     return this.creditCardForm.get('cardInstallments');
   }
+  get hasCreditCardInfo() {
+    return (
+      this.cardNumber.value ||
+      this.cardName.value ||
+      this.cardDate.value ||
+      this.cardDate.value ||
+      this.cardCvv.value
+    );
+  }
 }

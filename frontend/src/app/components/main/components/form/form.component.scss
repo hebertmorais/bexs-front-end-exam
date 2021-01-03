@@ -55,7 +55,27 @@
   height: 224px;
   width: 365px;
   padding-top: 35.5px;
+  transition: 0.4s;
+}
+.credit-card-container-front {
   background: url("../../../../../assets/images/credit-card-valid-background-shadow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.credit-card-container-back {
+  background: url("../../../../../assets/images/credit-card-valid-back-background-shadow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.credit-card-container-blank-front {
+  background: url("../../../../../assets/images/credit-card-blank-background-shadow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.credit-card-container-blank-back {
+  background: url("../../../../../assets/images/credit-card-blank-back-background-shadow.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -78,8 +98,10 @@
   margin-top: 44.72px;
   letter-spacing: 2.35px;
   word-spacing: 8.3px;
-  font: normal normal normal 22px SF Pro Text;
+  font-family: SF Pro Text;
+  text-align: center;
 }
+
 #credit-card-bottom-row {
   margin-top: 29px;
 }
