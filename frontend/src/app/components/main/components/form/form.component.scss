@@ -24,6 +24,10 @@
 .area-header #page-back {
   font: normal normal normal 13px Verdana;
 }
+.default-header {
+  display: flex;
+  align-items: center;
+}
 .mobile-header {
   display: none;
 }
@@ -244,6 +248,52 @@
   font-size: 30px;
 }
 
+@media only screen and (max-width: 1440px) {
+  .form {
+    height: 550px;
+    width: 850px;
+  }
+  .credit-card-area {
+    width: 300px;
+    padding-top: 40px;
+  }
+  .new-credit-card-text {
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    line-height: 20px;
+  }
+  .credit-card-container {
+    height: 155px;
+    width: 310px;
+  }
+  .credit-card-data {
+    width: 260px;
+  }
+  #credit-card-number {
+    margin-top: 28px;
+    font-size: 19px;
+  }
+  .inputs {
+    width: 350px;
+  }
+  .inputs-area {
+    padding-right: 44px;
+  }
+
+  #form-credit-card-name,
+  #form-credit-card-installments,
+  #form-credit-card-date {
+    margin-top: 10px;
+  }
+  #credit-card-cvv-row {
+    margin-left: 125px;
+    margin-top: 52px;
+  }
+  #credit-card-cvv {
+    font-size: 16px;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .default-header {
     display: none;
@@ -366,42 +416,5 @@
   #next-button {
     width: 100%;
     margin-bottom: 40px;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  .form {
-    height: 550px;
-    width: 850px;
-  }
-  .credit-card-area {
-    padding-top: 40px;
-  }
-  .credit-card-container {
-    height: 155px;
-    width: 310px;
-  }
-  .credit-card-data {
-    width: 260px;
-  }
-  #credit-card-number {
-    margin-top: 28px;
-    font-size: 18px !important;
-  }
-  .inputs {
-    width: 350px;
-  }
-
-  #form-credit-card-name,
-  #form-credit-card-installments,
-  #form-credit-card-date {
-    margin-top: 10px;
-  }
-  #credit-card-cvv-row {
-    margin-left: 125px;
-    margin-top: 52px;
-  }
-  #credit-card-cvv {
-    font-size: 16px;
   }
 }
