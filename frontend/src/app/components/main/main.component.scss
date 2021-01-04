@@ -1,9 +1,10 @@
 .main {
-  height: calc(100vh - (91px + 68px));
+  height: 100%;
   display: flex;
   gap: 15px;
   justify-content: center;
   padding-top: 65px;
+  padding-bottom: 65px;
   background: #f7f7f7;
 }
 
@@ -11,4 +12,18 @@
   width: 327px;
   height: 285px;
   background: white;
+}
+@media only screen and (max-width: 1279px) {
+  .extra {
+    display: none;
+  }
+}
+@media only screen and (max-width: 850px) {
+  app-form {
+    width: 100%;
+  }
+  .main {
+    padding-top: 0;
+    background-color: initial;
+  }
 }

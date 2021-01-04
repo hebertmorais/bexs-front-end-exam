@@ -1,19 +1,38 @@
 <div class="form">
   <div class="credit-card-area">
     <div class="area-header">
-      <mat-icon
-        [inline]="true"
-        style="
-          font-size: 28px;
-          color: white;
-          margin-right: 3.5px;
-          margin-left: -5px;
-        "
-        >keyboard_arrow_left
-      </mat-icon>
-      <span id="page-back">Alterar forma de pagamento</span>
+      <div class="default-header">
+        <mat-icon
+          [inline]="true"
+          style="
+            font-size: 28px;
+            color: white;
+            margin-right: 3.5px;
+            margin-left: -5px;
+          "
+          >keyboard_arrow_left
+        </mat-icon>
+        <span id="page-back">Alterar forma de pagamento</span>
+      </div>
+      <div class="mobile-header">
+        <mat-icon
+          [inline]="true"
+          style="
+            font-size: 40px;
+            color: white;
+            margin-right: 3.5px;
+            margin-left: 0px;
+            margin-top: -12.5px;
+            position: absolute;
+          "
+          >keyboard_arrow_left
+        </mat-icon>
+        <div class="mobile-title-container">
+          <span id="mobile-step-indicator"><strong>Etapa 2 </strong>de 3</span>
+        </div>
+      </div>
     </div>
-    <div>
+    <div class="new-credit-card-content">
       <div class="new-credit-card">
         <img
           class="new-credit-card-icon"
@@ -45,7 +64,11 @@
                 <span
                   class="credit-card-info"
                   [ngStyle]="{
-                    'font-size': hasCreditCardInfo ? '21px' : '26px'
+                    'font-size': hasCreditCardInfo ? '21px' : '26px',
+                    'text-align':
+                      cardNumber.value.length == 16 || !cardNumber.value.length
+                        ? 'justify'
+                        : 'center'
                   }"
                   id="credit-card-number"
                   >{{
@@ -54,19 +77,27 @@
                   }}</span
                 >
               </div>
-              <div id="credit-card-bottom-row" class="row">
-                <span class="credit-card-info" id="credit-card-name">{{
-                  cardName.value || "NOME DO TITULAR"
-                }}</span>
-                <span class="credit-card-info" id="credit-card-date">{{
-                  (cardDate.value | mask: "00/00") || "00/00"
-                }}</span>
+              <div
+                id="credit-card-bottom-row"
+                class="row"
+                style="display: flex"
+              >
+                <div class="credit-card-name-container">
+                  <span class="credit-card-info" id="credit-card-name">{{
+                    cardName.value || "NOME DO TITULAR"
+                  }}</span>
+                </div>
+                <div style="width: 20%; display: inline">
+                  <span class="credit-card-info" id="credit-card-date">{{
+                    (cardDate.value | mask: "00/00") || "00/00"
+                  }}</span>
+                </div>
               </div>
             </div>
             <div [hidden]="!cvvIsFocused" class="back-data">
               <div class="row" id="credit-card-cvv-row">
                 <span class="credit-card-info" id="credit-card-cvv">{{
-                  cardCvv.value || '***'
+                  cardCvv.value || "***"
                 }}</span>
               </div>
             </div>
@@ -145,7 +176,11 @@
           >
         </mat-form-field>
         <mat-form-field id="form-credit-card-cvv" class="column-half">
-          <mat-label>CVV<mat-icon id="cvv-info-icon" [inline]="true">info </mat-icon></mat-label>
+          <mat-label
+            >CVV<mat-icon id="cvv-info-icon" [inline]="true"
+              >info
+            </mat-icon></mat-label
+          >
           <input
             [formControl]="cardCvv"
             mask="000"
@@ -157,7 +192,7 @@
           />
           <mat-error
             *ngIf="cardCvv.errors?.minlength || cardCvv.errors?.required"
-            >Número de cartão inválido</mat-error
+            >Código inválido</mat-error
           >
         </mat-form-field>
       </div>
