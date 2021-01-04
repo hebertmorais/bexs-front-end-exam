@@ -122,6 +122,7 @@
             type="text"
             [formControl]="cardName"
             autocomplete="cc-name"
+            maxlength="26"
           />
           <mat-error *ngIf="cardName.errors?.pattern">Nome inválido</mat-error>
           <mat-error *ngIf="cardName.errors?.required"
