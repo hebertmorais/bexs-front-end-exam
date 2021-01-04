@@ -55,9 +55,9 @@
   height: 189px;
   width: 364px;
   padding-top: 35.5px;
-  transition: 0.25s;
-  border-radius: 16px;
-  box-shadow: 0px 8px 8px -2px #484747;
+  transition: 0.5s;
+  border-radius: 14px;
+  box-shadow: 0px 8px 8px -2px #4847478c;
 }
 .credit-card-container-front {
   background: url("../../../../../assets/images/credit-card-valid-background.png");
@@ -111,6 +111,10 @@
   font: normal normal normal 19px/28px SF Pro Text;
   letter-spacing: -0.57px;
   color: #3c3c3c;
+}
+#cvv-info-icon {
+  vertical-align: middle;
+  margin-left: 8px;
 }
 
 #credit-card-bottom-row {
@@ -206,6 +210,7 @@
   margin-top: 40px;
   float: right;
   background: #de4b4b;
+  border: none;
   border-radius: 10px;
   font: normal normal 600 17px/22px SF Pro Text;
   letter-spacing: -0.01px;
