@@ -49,3 +49,9 @@ body {
 .mat-error {
   font: normal normal normal 13px/22px Verdana;
 }
+
+@media only screen and (max-width: 1440px) {
+  .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+    margin-top: 0px !important;
+  }
+}
