@@ -21,8 +21,6 @@ export default class Utils {
       const isValidDate =
         inputYearYY >= currentYearYY && inputMonthMM >= currentMonthMM;
       const isValidRegex = dateRegex.test(control.value);
-      console.log('carddate', isValidDate && isValidRegex)
-
       return isValidDate && isValidRegex
         ? null
         : { dateCheck: isValidDate && isValidRegex };
