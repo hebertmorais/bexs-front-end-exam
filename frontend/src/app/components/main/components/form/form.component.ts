@@ -24,14 +24,19 @@ export class FormComponent implements OnInit {
       cardNumber: new FormControl('', [Util.luhnValidator()]),
       cardName: new FormControl('', [
         Validators.pattern(Util.namePattern),
+        Validators.minLength(2),
+        Validators.maxLength(26),
         Validators.required,
       ]),
       cardDate: new FormControl('', [
         Util.dateValidator(),
         Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(4),
       ]),
       cardCvv: new FormControl('', [
         Validators.minLength(3),
+        Validators.maxLength(3),
         Validators.required,
       ]),
       cardInstallments: new FormControl('', [Validators.required]),
