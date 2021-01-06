@@ -1,7 +1,7 @@
 import { ValidatorFn, AbstractControl } from '@angular/forms';
 
 export default class Utils {
-  static namePattern = /(?<! )[-a-zA-Z' ]{2,26}/;
+  static namePattern = /^(?!\s+$)[a-zA-Z,'. -]{2,26}$/;
   static datePattern = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
 
   static dateValidator(): ValidatorFn {
