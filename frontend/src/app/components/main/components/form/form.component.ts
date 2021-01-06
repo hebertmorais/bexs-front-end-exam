@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormGroupDirective,
-  NgForm,
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PaymentService } from 'src/app/services/payment.service';
 import Util from '../../../../common/utils';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -16,8 +12,12 @@ import Util from '../../../../common/utils';
 export class FormComponent implements OnInit {
   creditCardForm: any;
   cvvIsFocused = false;
+  loading = false;
 
-  constructor() {}
+  constructor(
+    private paymentService: PaymentService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.creditCardForm = new FormGroup({
@@ -39,7 +39,7 @@ export class FormComponent implements OnInit {
         Validators.maxLength(3),
         Validators.required,
       ]),
-      cardInstallments: new FormControl('', [Validators.required]),
+      cardInstallments: new FormControl('12', [Validators.required]),
     });
   }
 
@@ -70,6 +70,19 @@ export class FormComponent implements OnInit {
 
   toggleCvvFocus(focus: string) {
     this.cvvIsFocused = focus == 'on';
-    console.log('focus', this.cvvIsFocused)
+  }
+
+  pay() {
+    this.loading = true;
+    this.paymentService
+      .pay(this.creditCardForm.getRawValue())
+      .subscribe((res) => {
+        setTimeout(() => {
+          this.loading = false;
+          this._snackBar.open('Pagamento feito com sucesso', 'OK', {
+            duration: 4000,
+          });
+        }, 1500);
+      });
   }
 }

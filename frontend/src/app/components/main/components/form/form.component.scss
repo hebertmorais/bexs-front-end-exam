@@ -9,7 +9,6 @@
   display: inline-block;
   box-sizing: border-box;
 }
-
 .form {
   width: 1024px;
   height: 596px;
@@ -77,13 +76,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .credit-card-container-blank-front {
   background: url("../../../../../assets/images/credit-card-blank-background.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .credit-card-container-blank-back {
   background: url("../../../../../assets/images/credit-card-blank-back-background.png");
   background-repeat: no-repeat;
@@ -102,6 +99,9 @@
   height: 23px;
   width: 69px;
   margin-left: -5.4px;
+}
+#credit-card-name {
+  text-transform: uppercase;
 }
 #credit-card-number {
   display: block;
@@ -135,7 +135,6 @@
   vertical-align: middle;
   margin-left: 8px;
 }
-
 #credit-card-bottom-row {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -213,11 +212,9 @@
   color: #c9c9c9;
   font-family: Verdana;
 }
-
 #form-credit-card-number input {
   word-spacing: 6px;
 }
-
 #form-credit-card-name,
 #form-credit-card-installments,
 #form-credit-card-date {
@@ -239,6 +236,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+.disabled-button {
+  background: #a7a3a3 !important;
+}
 #select-arrow-icon {
   color: #de4b4b;
   margin-left: -26px;
@@ -247,7 +247,24 @@
   right: 0px;
   font-size: 30px;
 }
-
+.spinner {
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 3px solid transparent;
+  border-left-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media only screen and (max-width: 1440px) {
   .form {
     height: 550px;
@@ -279,7 +296,6 @@
   .inputs-area {
     padding-right: 44px;
   }
-
   #form-credit-card-name,
   #form-credit-card-installments,
   #form-credit-card-date {
@@ -293,7 +309,6 @@
     font-size: 16px;
   }
 }
-
 @media only screen and (max-width: 800px) {
   .default-header {
     display: none;
@@ -387,7 +402,6 @@
   #credit-card-date {
     font-size: 12px;
   }
-
   #credit-card-bottom-row {
     margin-top: -10px;
   }

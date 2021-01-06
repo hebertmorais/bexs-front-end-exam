@@ -133,6 +133,7 @@
       *ngIf="creditCardForm"
       name="creditCardForm"
       [formGroup]="creditCardForm"
+      (ngSubmit)="pay()"
     >
       <div class="row">
         <mat-form-field id="form-credit-card-number" class="column-full">
@@ -209,10 +210,7 @@
           class="column-full"
         >
           <mat-label>Número de parcelas</mat-label>
-          <mat-select
-            name="installments"
-            id="installments"
-          >
+          <mat-select value="1" name="installments" id="installments">
             <mat-option selected value="1">12x R$1.000,00 sem juros</mat-option>
             <mat-option value="12">1x R$12.000,00 sem juros</mat-option>
           </mat-select>
@@ -224,8 +222,18 @@
           >
         </mat-form-field>
       </div>
-      <button matButton id="next-button" type="submit" href="#">
-        Continuar
+      <button
+        [disabled]="creditCardForm.status == 'INVALID'"
+        mat-button
+        id="next-button"
+        [ngClass]="{ 'disabled-button': creditCardForm.status == 'INVALID' }"
+        type="submit"
+        href="#"
+      >
+        <span *ngIf="!loading">Continuar</span>
+        <span *ngIf="loading">
+          <div class="spinner" color="#ffffff"></div>
+        </span>
       </button>
     </form>
   </div>
