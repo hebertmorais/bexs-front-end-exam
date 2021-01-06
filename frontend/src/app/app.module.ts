@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     MatIconModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
