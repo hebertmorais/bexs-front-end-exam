@@ -1,5 +1,45 @@
 # Exame - Bexs Front-end
 
+## Observações
+
+Olá, tudo bem? <br><br>
+Você pode acessar uma página com o projeto rodando no link abaixo:<br>
+<https://bexs-front-end-exam.netlify.app/><br><br>
+O projeto principal está na pasta frontend, porém também foi criado uma pasta backend para que fosse possível fazer a chamada de teste de API /pagar.
+
+O projeto do frontend está em angular, portanto, se você ainda não tem o angular em seu ambiente basta instalar com:
+
+~~~shell
+$ npm install -g @angular/cli
+~~~
+
+Para rodar o frontend e o backend em um comando só basta rodar o comando:
+~~~shell
+$ npm i && npm run dev
+~~~
+
+Caso queira rodar o frontend e o backend separados, basta seguir os passos abaixo:
+
+1) Para acessar e rodar o backend:
+~~~shell
+$ cd backend
+$ npm install
+$ node app.js
+~~~
+
+
+2) Para acessar e rodar o frontend:
+~~~shell
+$ cd frontend
+$ npm install
+$ ng serve --open
+~~~
+
+Para rodar os testes de unidade (assumindo que você está na pasta frontend), rode o seguinte comando:
+~~~shell
+$ npm run test
+~~~
+
 ## Desafio
 
 Desenvolver uma aplicação front-end de acordo com as especificações descritas nos **requisitos** utilizando a _stack_ tecnologica de sua preferencia.
