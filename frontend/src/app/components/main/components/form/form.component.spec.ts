@@ -96,7 +96,7 @@ describe('FormComponent', () => {
 
   it('credit card name should be valid when holder name is between 2 and 26 characters long', () => {
     const creditCardName = component.creditCardForm.controls['cardName'];
-    creditCardName.setValue('José da Silva');
+    creditCardName.setValue('Jose da Silva');
     fixture.detectChanges();
     const errors = creditCardName.errors || {};
     expect(Object.keys(errors).length).toEqual(0);
